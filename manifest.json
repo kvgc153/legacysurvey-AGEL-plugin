@@ -1,0 +1,28 @@
+{
+	"manifest_version": 2,
+	"name": "legacysurvey-AGEL-plugin",
+	"version": "0.0.1",
+	"description": "https://github.com/kvgc153/legacysurvey-AGEL-plugin",
+
+	"permissions": [
+		"<all_urls>", "activeTab", "tabs"
+	],
+
+	"browser_action": {
+		"default_title": "legacysurvey-AGEL-plugin",
+		"browser_style": true
+	},
+
+	"applications": {
+		"gecko": {
+			"id": "AGEL-plugin@AGEL-plugin.io"
+		}
+	},
+	"content_scripts": [
+		{
+		  "matches": ["*://*/*"],
+		  "js": ["src/contentScript.js"],
+		  "run_at": "document_end"
+		}
+	  ]
+}
