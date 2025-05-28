@@ -20,9 +20,9 @@
 	},
 	"content_scripts": [
 		{
-		  "matches": ["*://*/*"],
+		  "matches": ["*://www.legacysurvey.org/*"],
 		  "js": ["src/contentScript.js"],
-		  "run_at": "document_end"
+		  "run_at": "document_start"
 		}
 	  ]
 }
