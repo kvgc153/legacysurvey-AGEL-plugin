@@ -1,11 +1,11 @@
 {
 	"manifest_version": 2,
 	"name": "legacysurvey-AGEL-plugin",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "https://github.com/kvgc153/legacysurvey-AGEL-plugin",
 
 	"permissions": [
-		"<all_urls>", "activeTab", "tabs"
+		"*://www.legacysurvey.org/*"
 	],
 
 	"browser_action": {
