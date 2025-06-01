@@ -1,6 +1,6 @@
 # AGEL survey plugin for the legacysurvey-viewer
 
-This browser extension marks the strong gravitational lenses measured by the [AGEL survey](https://sites.google.com/view/agelsurvey/home?authuser=0) along with the redshifts published in [our latest data release paper](https://arxiv.org/abs/2503.08041) on the LegacySurvey-viewer
+This browser extension overlays the location and measured redshifts of gravitational lenses from the [AGEL survey](https://sites.google.com/view/agelsurvey/home?authuser=0)-- [Data Release 2](https://arxiv.org/abs/2503.08041) on the LegacySurvey-viewer
 
 
 Download the extension for firefox [here](https://addons.mozilla.org/en-US/firefox/addon/agel-plugin-for-legacysurvey/) and chrome (coming soon).
