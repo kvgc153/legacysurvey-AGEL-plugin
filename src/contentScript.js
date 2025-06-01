@@ -203,26 +203,31 @@ injectScript(function() {
     for(let i = 0; i < agelLensesKeys.length; i++) {
         RA_agel = agelLenses[agelLensesKeys[i]][0];
         DEC_agel = agelLenses[agelLensesKeys[i]][1];
-        var clong = map.getCenter().lng;
-        var clat = map.getCenter().lat;
-        RA_agel_mod = ra2long_C(RA_agel, clong);
-        DEC_agel_mod = dec2lat(DEC_agel);
-        // Draw a circle marker at the AGEL lens position
-        var agelMarker = L.circleMarker([ DEC_agel_mod, RA_agel_mod], {
-            radius: 20,
-            color: 'rgb(164, 232, 17)',
-            fillOpacity: 0,
-    
-        }).addTo(window.map);
-        let makeHTML = `<h3>${agelLensesKeys[i]}</h3>
-        <p>RA, DEC: ${RA_agel.toFixed(4)},${DEC_agel.toFixed(4)}</p>
-        <p>z(def): ${agelLenses[agelLensesKeys[i]][2]}<br> z(src): ${agelLenses[agelLensesKeys[i]][3]}</p>`;
+        var offsets = [0,360,-360];
+        for(let offsetID=0; offsetID<offsets.length; offsetID++){
 
-        agelMarker.bindPopup(makeHTML, {
-            maxWidth: 300,
-            minWidth: 200,
-            closeButton: true,
-            autoClose: false,});
+          var clong = map.getCenter().lng + offsets[offsetID];
+          var clat = map.getCenter().lat;
+          RA_agel_mod = ra2long_C(RA_agel, clong);
+          DEC_agel_mod = dec2lat(DEC_agel);
+
+          // Draw a circle marker at the AGEL lens position
+          var agelMarker = L.circleMarker([ DEC_agel_mod, RA_agel_mod], {
+              radius: 20,
+              color: 'rgb(164, 232, 17)',
+              fillOpacity: 0,
+      
+          }).addTo(window.map);
+          let makeHTML = `<h3>${agelLensesKeys[i]}</h3>
+          <p>RA, DEC: ${RA_agel.toFixed(4)},${DEC_agel.toFixed(4)}</p>
+          <p>z(def): ${agelLenses[agelLensesKeys[i]][2]}<br> z(src): ${agelLenses[agelLensesKeys[i]][3]}</p>`;
+
+          agelMarker.bindPopup(makeHTML, {
+              maxWidth: 300,
+              minWidth: 200,
+              closeButton: true,
+              autoClose: false,});
+        }
     }
 
     // function agelSearchAndDisplay(){
